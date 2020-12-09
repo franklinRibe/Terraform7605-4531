@@ -13,7 +13,7 @@ resource "google_compute_instance" "cap-5" {
  network_interface {
     subnetwork = google_compute_subnetwork.nw-us-central.name
        access_config {
-      // Ephemeral IP
+
     }
   }
 }
