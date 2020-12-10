@@ -54,19 +54,6 @@ variable "image2" {
   default     = "debian-cloud/debian-9"
 
 }
-###### variáveis da instancia 2
-variable "instance-name2" {
-    type = string
-    description = "nome da instancia"
-    default = "instance-asia"
-   
-}
-variable "type2" {
-    type = string
-    description = "tipo de maquina"
-    default = "f1-micro"
-   
-}
 
 ####################### VPC
 variable "vpc-name" {
@@ -132,7 +119,7 @@ variable "fw-name" {
   default     = "fw-rule"
 }
 
-variable "icmp" {
+variable "fw-icmp" {
   type        = string
   description = "icmp"
   default     = "icmp"
@@ -173,5 +160,5 @@ variable "pub-ssh-key"{
 variable "script-inicial"{
   type        = string
   description = "script de instalação do NGINX"
-  default     = "sudo apt-get update -y && sudo apt-get install nginx -y"
+  default     = "sudo apt-get update && sudo apt-get install nginx -y"
 }

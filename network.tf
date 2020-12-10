@@ -18,7 +18,7 @@ resource "google_compute_subnetwork" "nw-asia-east" {
   network       = google_compute_network.vpc-terraform.id
 }
 resource "google_compute_firewall" "fw-rule"{
-  name    = var.fw-rule-name
+  name    = var.fw-name
   network = google_compute_network.vpc-terraform.id
 
   allow {
