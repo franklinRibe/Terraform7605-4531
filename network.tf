@@ -1,8 +1,10 @@
+####### VPC
 resource "google_compute_network" "vpc-terraform" {
   name = var.vpc-name
   auto_create_subnetworks = var.autocreate-subnet
 }
 
+####### Sub-rede
 resource "google_compute_subnetwork" "nw-us-central" {
   name          = var.subnet1-name
   ip_cidr_range = var.ip_subnet1
@@ -27,7 +29,6 @@ resource "google_compute_firewall" "fw-rule"{
     protocol = var.protocol
     ports    = var.ports
   }
-  source_ranges = var.source-ranges
-  source_tags   = ["web"]
-  
+  source_ranges = var.sources_ranges
+  source_tags = var.fw-tags
 }
